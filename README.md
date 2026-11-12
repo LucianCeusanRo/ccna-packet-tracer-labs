@@ -6,6 +6,7 @@
 
 **Four ready-to-build Cisco labs with configs, diagrams and verification — explained, not memorised.**
 
+  <a href="https://ccna-labs-demo.vercel.app"><img alt="Live demo" src="https://img.shields.io/badge/Live%20demo-open-0ea5e9"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green.svg"></a>
   <img alt="Cisco IOS" src="https://img.shields.io/badge/language-Cisco%20IOS-blue">
   <a href="https://github.com/LucianCeusanRo/ccna-packet-tracer-labs/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/LucianCeusanRo/ccna-packet-tracer-labs?style=flat"></a>
@@ -16,6 +17,8 @@
 </div>
 
 <p align="center"><img src="docs/screenshots/01-vlan-trunk.png" alt="CCNA Packet Tracer Labs screenshot" width="900"></p>
+
+<p align="center"><strong><a href="https://ccna-labs-demo.vercel.app">▶ Live demo</a></strong> — open it in the browser and try it yourself.</p>
 
 ## 📑 Table of contents
 
