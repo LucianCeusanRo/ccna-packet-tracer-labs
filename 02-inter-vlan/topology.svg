@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" width="640" height="230" role="img" aria-label="A switch trunks to a router with two 802.1Q subinterfaces">
+<style>
+.txt{font-family:Inter Tight,ui-sans-serif,system-ui,sans-serif;fill:#eef0f3}
+.mu{fill:#98a0ac}
+.sm{font-size:13px}
+.md{font-size:15px;font-weight:600}
+.lg{font-size:16.5px;font-weight:700}
+.box{fill:#13161b;stroke-width:1.6}
+.sw{stroke:#7cc4ff}
+.rt{stroke:#8b7bff}
+.pc{stroke:#3ddc97}
+.ln{stroke:#2b3039;stroke-width:1.6;fill:none}
+.cap{font-size:12px;fill:#6b7280}
+</style>
+<rect width="640" height="230" fill="none"/>
+<line class="ln" x1="150" y1="70" x2="230" y2="124" stroke="#3ddc97"/>
+<line class="ln" x1="150" y1="190" x2="230" y2="148" stroke="#3ddc97"/>
+<line class="ln" x1="340" y1="136" x2="400" y2="136" stroke="#7cc4ff"/>
+<rect class="box pc" x="20" y="40" width="130" height="60" rx="14"/>
+<text class="txt md" x="85.0" y="64.0" text-anchor="middle">PC1 Staff</text>
+<text class="txt mu sm" x="85.0" y="84.0" text-anchor="middle">192.168.10.10/24</text>
+<rect class="box pc" x="20" y="168" width="130" height="60" rx="14"/>
+<text class="txt md" x="85.0" y="192.0" text-anchor="middle">PC2 Guest</text>
+<text class="txt mu sm" x="85.0" y="212.0" text-anchor="middle">192.168.20.10/24</text>
+<rect class="box sw" x="220" y="106" width="120" height="60" rx="14"/>
+<text class="txt md" x="280.0" y="130.0" text-anchor="middle">SW1</text>
+<text class="txt mu sm" x="280.0" y="150.0" text-anchor="middle">Cisco 2960</text>
+<rect class="box rt" x="400" y="96" width="200" height="80" rx="14"/>
+<text class="txt md" x="500.0" y="130.0" text-anchor="middle">R1</text>
+<text class="txt mu sm" x="500.0" y="150.0" text-anchor="middle">Cisco 2911</text>
+<text class="txt mu sm" x="185" y="92" text-anchor="middle">Fa0/1 · VLAN 10</text>
+<text class="txt mu sm" x="185" y="180" text-anchor="middle">Fa0/2 · VLAN 20</text>
+<text class="txt mu sm" x="370" y="92" text-anchor="middle">802.1Q trunk</text>
+<text class="txt mu sm" x="500" y="192" text-anchor="middle">Gi0/0.10 192.168.10.1</text>
+<text class="txt mu sm" x="500" y="210" text-anchor="middle">Gi0/0.20 192.168.20.1</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" role="img" aria-label="Two switches connected by an 802.1Q trunk, with VLAN 10 and VLAN 20 access ports">
+<style>
+.txt{font-family:Inter Tight,ui-sans-serif,system-ui,sans-serif;fill:#eef0f3}
+.mu{fill:#98a0ac}
+.sm{font-size:13px}
+.md{font-size:15px;font-weight:600}
+.lg{font-size:16.5px;font-weight:700}
+.box{fill:#13161b;stroke-width:1.6}
+.sw{stroke:#7cc4ff}
+.rt{stroke:#8b7bff}
+.pc{stroke:#3ddc97}
+.ln{stroke:#2b3039;stroke-width:1.6;fill:none}
+.cap{font-size:12px;fill:#6b7280}
+</style>
+<rect width="640" height="300" fill="none"/>
+<line class="ln" x1="140" y1="62" x2="210" y2="148" stroke="#3ddc97"/>
+<line class="ln" x1="140" y1="226" x2="210" y2="168" stroke="#3ddc97"/>
+<line class="ln" x1="500" y1="62" x2="430" y2="148" stroke="#3ddc97"/>
+<line class="ln" x1="500" y1="226" x2="430" y2="168" stroke="#3ddc97"/>
+<line class="ln" x1="310" y1="148" x2="360" y2="148" stroke="#7cc4ff"/>
+<rect class="box pc" x="20" y="30" width="120" height="64" rx="14"/>
+<text class="txt md" x="80.0" y="56.0" text-anchor="middle">PC1</text>
+<text class="txt mu sm" x="80.0" y="76.0" text-anchor="middle">192.168.10.10</text>
+<rect class="box pc" x="20" y="198" width="120" height="64" rx="14"/>
+<text class="txt md" x="80.0" y="224.0" text-anchor="middle">PC2</text>
+<text class="txt mu sm" x="80.0" y="244.0" text-anchor="middle">192.168.20.10</text>
+<rect class="box sw" x="200" y="118" width="110" height="60" rx="14"/>
+<text class="txt md" x="255.0" y="142.0" text-anchor="middle">SW1</text>
+<text class="txt mu sm" x="255.0" y="162.0" text-anchor="middle">Cisco 2960</text>
+<rect class="box sw" x="360" y="118" width="110" height="60" rx="14"/>
+<text class="txt md" x="415.0" y="142.0" text-anchor="middle">SW2</text>
+<text class="txt mu sm" x="415.0" y="162.0" text-anchor="middle">Cisco 2960</text>
+<rect class="box pc" x="500" y="30" width="120" height="64" rx="14"/>
+<text class="txt md" x="560.0" y="56.0" text-anchor="middle">PC3</text>
+<text class="txt mu sm" x="560.0" y="76.0" text-anchor="middle">192.168.10.20</text>
+<rect class="box pc" x="500" y="198" width="120" height="64" rx="14"/>
+<text class="txt md" x="560.0" y="224.0" text-anchor="middle">PC4</text>
+<text class="txt mu sm" x="560.0" y="244.0" text-anchor="middle">192.168.20.20</text>
+<text class="txt mu sm" x="175" y="100" text-anchor="middle">Fa0/1 · VLAN 10</text>
+<text class="txt mu sm" x="175" y="196" text-anchor="middle">Fa0/2 · VLAN 20</text>
+<text class="txt mu sm" x="465" y="100" text-anchor="middle">Fa0/1 · VLAN 10</text>
+<text class="txt mu sm" x="465" y="196" text-anchor="middle">Fa0/2 · VLAN 20</text>
+<text class="txt cap" x="320" y="284" text-anchor="middle">Gi0/1 · 802.1Q trunk · allowed VLAN 10,20</text>
+</svg>

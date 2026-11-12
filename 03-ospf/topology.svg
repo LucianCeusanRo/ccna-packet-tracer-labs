@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" width="640" height="280" role="img" aria-label="Three routers in a triangle, OSPF area 0, each with a loopback">
+<style>
+.txt{font-family:Inter Tight,ui-sans-serif,system-ui,sans-serif;fill:#eef0f3}
+.mu{fill:#98a0ac}
+.sm{font-size:13px}
+.md{font-size:15px;font-weight:600}
+.lg{font-size:16.5px;font-weight:700}
+.box{fill:#13161b;stroke-width:1.6}
+.sw{stroke:#7cc4ff}
+.rt{stroke:#8b7bff}
+.pc{stroke:#3ddc97}
+.ln{stroke:#2b3039;stroke-width:1.6;fill:none}
+.cap{font-size:12px;fill:#6b7280}
+</style>
+<rect width="640" height="280" fill="none"/>
+<line class="ln" x1="320" y1="86" x2="160" y2="196" stroke="#7cc4ff"/>
+<line class="ln" x1="320" y1="86" x2="480" y2="196" stroke="#8b7bff"/>
+<line class="ln" x1="200" y1="210" x2="440" y2="210" stroke="#3ddc97"/>
+<rect class="box rt" x="250" y="40" width="140" height="70" rx="14"/>
+<text class="txt md" x="320.0" y="69.0" text-anchor="middle">R1</text>
+<text class="txt mu sm" x="320.0" y="89.0" text-anchor="middle">lo0 1.1.1.1/32</text>
+<rect class="box rt" x="90" y="180" width="140" height="70" rx="14"/>
+<text class="txt md" x="160.0" y="209.0" text-anchor="middle">R2</text>
+<text class="txt mu sm" x="160.0" y="229.0" text-anchor="middle">lo0 2.2.2.2/32</text>
+<rect class="box rt" x="410" y="180" width="140" height="70" rx="14"/>
+<text class="txt md" x="480.0" y="209.0" text-anchor="middle">R3</text>
+<text class="txt mu sm" x="480.0" y="229.0" text-anchor="middle">lo0 3.3.3.3/32</text>
+<text class="txt mu sm" x="200" y="130" text-anchor="middle">10.0.12.0/30</text>
+<text class="txt mu sm" x="440" y="130" text-anchor="middle">10.0.13.0/30</text>
+<text class="txt mu sm" x="320" y="202" text-anchor="middle">10.0.23.0/30</text>
+<text class="txt cap" x="320" y="268" text-anchor="middle">OSPF process 1 · area 0 · all three links + loopbacks advertised</text>
+</svg>

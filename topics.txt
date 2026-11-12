@@ -1,0 +1,10 @@
+ccna
+cisco
+packet-tracer
+networking
+vlan
+ospf
+acl
+cisco-ios
+network-labs
+romanian

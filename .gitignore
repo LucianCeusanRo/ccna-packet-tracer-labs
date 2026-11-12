@@ -1,0 +1,4 @@
+# Packet Tracer saves (add .pkt files deliberately if you want them)
+*.pkt.bak
+.DS_Store
+*.swp
