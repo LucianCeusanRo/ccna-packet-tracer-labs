@@ -2,3 +2,7 @@
 *.pkt.bak
 .DS_Store
 *.swp
+
+# Test cache
+__pycache__/
+*.pyc

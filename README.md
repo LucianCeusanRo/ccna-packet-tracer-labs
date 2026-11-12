@@ -7,6 +7,7 @@
 **Four ready-to-build Cisco labs with configs, diagrams and verification — explained, not memorised.**
 
   <a href="https://ccna-labs-demo.vercel.app"><img alt="Live demo" src="https://img.shields.io/badge/Live%20demo-open-0ea5e9"></a>
+  <a href="https://github.com/LucianCeusanRo/ccna-packet-tracer-labs/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/LucianCeusanRo/ccna-packet-tracer-labs/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green.svg"></a>
   <img alt="Cisco IOS" src="https://img.shields.io/badge/language-Cisco%20IOS-blue">
   <a href="https://github.com/LucianCeusanRo/ccna-packet-tracer-labs/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/LucianCeusanRo/ccna-packet-tracer-labs?style=flat"></a>
@@ -106,6 +107,7 @@ No configuration or secrets are needed — only Cisco Packet Tracer 8.x.
 04-acl/          R1.cfg, R1-standard-acl.cfg, R1-extended-acl.cfg, SW1.cfg, topology.svg, README.md
 LEARN.md         Romanian study notes: why each command works, common mistakes
 docs/screenshots rendered topology images
+tests/         CI: parse every .cfg and check README links
 ```
 
 ## ⚠️ Limitations
