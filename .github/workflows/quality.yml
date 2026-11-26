@@ -1,0 +1,72 @@
+name: Quality
+
+# Lightweight checks shared by all of Lucian's repos:
+#  - secret scan of the full git history (gitleaks, values redacted)
+#  - config/parameter validation (every JSON/YAML/TOML file must parse,
+#    no real .env file committed, .env.example must not hold real values)
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 5 * * 1"   # weekly, Monday
+
+permissions:
+  contents: read
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: gitleaks (full history, redacted)
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz | tar xz gitleaks
+          ./gitleaks git . --redact --no-banner --exit-code 1
+
+  config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pyyaml
+      - name: Validate config files
+        shell: python
+        run: |
+          import json, pathlib, re, subprocess, sys, tomllib, yaml
+          files = subprocess.run(["git", "ls-files"], capture_output=True, text=True, check=True).stdout.split("\n")
+          skip = re.compile(r"(^|/)(node_modules|vendor|dist)/|package-lock\.json$|deno\.lock$")
+          bad = []
+          n = 0
+          for f in filter(None, files):
+              if skip.search(f):
+                  continue
+              p = pathlib.Path(f)
+              try:
+                  if p.suffix == ".json":
+                      json.loads(p.read_text(encoding="utf-8")); n += 1
+                  elif p.suffix in (".yml", ".yaml"):
+                      list(yaml.safe_load_all(p.read_text(encoding="utf-8"))); n += 1
+                  elif p.suffix == ".toml":
+                      tomllib.loads(p.read_text(encoding="utf-8")); n += 1
+              except Exception as e:
+                  bad.append(f"{f}: {type(e).__name__}: {str(e).splitlines()[0][:120]}")
+              name = p.name
+              if name == ".env" or (name.startswith(".env.") and name not in (".env.example", ".env.sample", ".env.template")):
+                  bad.append(f"{f}: real .env file is committed - move values to GitHub Secrets / Vercel env")
+              if name in (".env.example", ".env.sample", ".env.template"):
+                  for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
+                      m = re.match(r"\s*([A-Z0-9_]*(KEY|TOKEN|SECRET|PASSWORD|PASS)[A-Z0-9_]*)\s*=\s*(.*)", line)
+                      if m:
+                          v = m.group(3).strip().strip('"\'')
+                          if len(v) >= 24 and re.fullmatch(r"[A-Za-z0-9_\-+/=.]+", v) and not re.search(r"(?i)your|xxx|change|example|here|placeholder|generate|random", v):
+                              bad.append(f"{f}:{i}: {m.group(1)} looks like a real value (not printed)")
+          print(f"parsed {n} config files")
+          if bad:
+              print("\n".join(bad)); sys.exit(1)
+          print("config OK")
